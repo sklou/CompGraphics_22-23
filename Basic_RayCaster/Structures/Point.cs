@@ -29,5 +29,5 @@ namespace Basic_RayCaster.Structures
         return new Point(p.x + v.x, p.y + v.y, p.z + v.z); // Додавання вектора до точки
     }
 }
-
+*/
 }

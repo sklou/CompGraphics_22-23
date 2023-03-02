@@ -8,67 +8,55 @@ namespace Basic_RayCaster.Structures
 {
     public struct Normal
     {
-        public double x;
-        public double y;
-        public double z;
+        public double X { get; }
+        public double Y { get; }
+        public double Z { get; }
 
         public Normal(double x, double y, double z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
-        public Normal(Vector v)
+        public static Normal operator -(Normal a)
         {
-            x = v.x;
-            y = v.y;
-            z = v.z;
+            return new Normal(-a.X, -a.Y, -a.Z);
         }
 
-        public static Normal operator +(Normal n1, Normal n2)
+        public static Normal operator +(Normal a, Normal b)
         {
-            return new Normal(n1.x + n2.x, n1.y + n2.y, n1.z + n2.z);
+            return new Normal(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
 
-        public static Normal operator -(Normal n1, Normal n2)
+        public static Normal operator -(Normal a, Normal b)
         {
-            return new Normal(n1.x - n2.x, n1.y - n2.y, n1.z - n2.z);
+            return new Normal(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
         }
 
-        public static Normal operator *(double d, Normal n)
+        public static Normal operator *(Normal a, double scalar)
         {
-            return new Normal(d * n.x, d * n.y, d * n.z);
+            return new Normal(a.X * scalar, a.Y * scalar, a.Z * scalar);
         }
 
-        public static double operator *(Normal n1, Normal n2)
+        public static double operator *(Normal a, Vector b)
         {
-            return n1.x * n2.x + n1.y * n2.y + n1.z * n2.z;
+            return a.X * b.x + a.Y * b.y + a.Z * b.z;
         }
 
-        public static double operator *(Normal n1, Vector v2)
+        public double Magnitude()
         {
-            return n1.x * v2.x + n1.y * v2.y + n1.z * v2.z;
+            return Math.Sqrt(X * X + Y * Y + Z * Z);
+        }
+        public double DotProduct(Vector vector)
+        {
+            return X * vector.x + Y * vector.y + Z * vector.z;
         }
 
-        public static Normal operator /(Normal n, double d)
+        public Normal Normalize()
         {
-            return new Normal(n.x / d, n.y / d, n.z / d);
-        }
-
-        public double LengthSquared
-        {
-            get { return x * x + y * y + z * z; }
-        }
-
-        public double Length
-        {
-            get { return Math.Sqrt(LengthSquared); }
-        }
-
-        public Normal Normalized
-        {
-            get { return this / Length; }
+            double magnitude = Magnitude();
+            return new Normal(X / magnitude, Y / magnitude, Z / magnitude);
         }
     }
 

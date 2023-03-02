@@ -6,37 +6,33 @@ using System.Threading.Tasks;
 
 namespace Basic_RayCaster.Structures
 {
+    
     public struct Plane
     {
-        public Point point;
-        public Normal normal;
+        public Point PointOnPlane { get; }
+        public Normal Normal { get; }
 
-        public Plane(Point point, Normal normal)
+        public Plane(Point pointOnPlane, Normal normal)
         {
-            this.point = point;
-            this.normal = normal.Normalized;
+            PointOnPlane = pointOnPlane;
+            Normal = normal;
         }
 
-        public double Intersect(Ray ray)
+        public double? Intersect(Ray ray)
         {
-            double denom = normal * ray.direction;      //denom = sqrt(A^2 + B^2 + C^2)
-            if (denom > 0)
+            double denominator = Normal.DotProduct(ray.direction);
+            if (denominator == 0)
             {
-                return double.PositiveInfinity;
+                return null;
             }
-            else
-            {
-                Vector v = point - ray.origin;
-                double t = normal * v / denom;
-                if (t < 0)
-                {
-                    return double.PositiveInfinity;
-                }
-                else
-                {
-                    return t;
-                }
-            }
+
+            double t = Normal.DotProduct(PointOnPlane - ray.origin) / denominator;
+            return t >= 0 ? t : null;
+        }
+
+        public Normal NormalAtPoint(Point point)
+        {
+            return Normal;
         }
     }
 
