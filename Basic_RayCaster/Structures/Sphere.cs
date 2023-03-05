@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace Basic_RayCaster.Structures
 {
-    public struct Sphere
+    struct Sphere
     {
-        public Point center;
-        public double radius;
+        public Vector position;
+        public float radius;
 
-        public Sphere(Point center, double radius)
+        public Sphere(Vector position, float radius)
         {
-            this.center = center;
+            this.position = position;
             this.radius = radius;
         }
 
-        /*public double Intersect(Ray ray)
+        /*public bool Intersect(Ray ray)
         {
-            return
-        }
-        */
+           
+        }*/
     }
-
 }

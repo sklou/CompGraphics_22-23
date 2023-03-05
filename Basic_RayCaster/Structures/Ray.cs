@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace Basic_RayCaster.Structures
 {
-    public struct Ray
+    struct Ray
     {
-        public Point origin;
+        public Vector origin;
         public Vector direction;
 
-    public Ray(Point origin, Vector direction)
+        public Ray(Vector origin, Vector direction)
         {
             this.origin = origin;
-            this.direction = direction.Normalize();
-        }
-
-        public Point GetPoint(double distance)
-        {
-            return origin + direction * distance;
+            this.direction = direction;
         }
     }
-
-    }
+}

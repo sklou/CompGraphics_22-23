@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Basic_RayCaster.Structures;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,24 +7,18 @@ using System.Threading.Tasks;
 
 namespace Basic_RayCaster.Structures
 {
-   
-    public struct Camera
+    struct Camera
     {
-        public Point Position;
-        public Vector Direction;
-        public double FieldOfView;
+        public Vector position;
 
-        public Camera(Point position, Vector direction, double FoV)
+        public Camera(Vector position)
         {
-            Position = position;
-            Direction = direction;
-            FieldOfView = FoV;
+            this.position = position;
         }
-    }
-    /*  public Ray GetRay(double x, double y)
-     {
-         Vector rayDirection = forward + ((x - 0.5) * width * right) + ((y - 0.5) * height * up);
-         return new Ray(position, rayDirection.Normalize());
-     }*/
 
+       /* public Ray GetRay_For_Pixel(int x, int y, int width, int height)
+        {
+           
+        }*/
+    }
 }
