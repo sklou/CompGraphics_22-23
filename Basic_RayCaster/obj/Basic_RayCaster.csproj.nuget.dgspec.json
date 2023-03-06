@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj": {}
+    "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj": {
+    "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
+        "projectUniqueName": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
         "projectName": "Basic_RayCaster",
-        "projectPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
-        "packagesPath": "C:\\Users\\Danya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\obj\\",
+        "projectPath": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
+        "packagesPath": "C:\\Users\\sssok\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\Basic_RayCaster\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Danya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sssok\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
