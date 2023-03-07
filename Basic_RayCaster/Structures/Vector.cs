@@ -13,14 +13,12 @@ namespace Basic_RayCaster.Structures
         public float x;
         public float y;
         public float z;
-
         public Vector(float x, float y, float z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
         }
-
         public static Vector operator +(Vector a, Vector b)
         {
             return new Vector(a.x + b.x, a.y + b.y, a.z + b.z);
@@ -47,7 +45,6 @@ namespace Basic_RayCaster.Structures
         {
             return (float)Math.Sqrt(x * x + y * y + z * z);
         }
-
         public void Normalize()
         {
             float magn = Magnitude();
