@@ -6,23 +6,36 @@ using System.Threading.Tasks;
 
 namespace Basic_RayCaster.Structures
 {
-    
-    public struct Plane
+    struct Plane
     {
-        public Point point_on_plane { get; }
-        public Normal Normal { get; }
+        public Vector position;
+        public Vector normal;
 
-        public Plane(Point pointOnPlane, Normal normal)
+        public Plane(Vector position, Vector normal)
         {
-            point_on_plane = pointOnPlane;
-            Normal = normal;
+            this.position = position;
+            this.normal = normal;
         }
 
-      /*  public double Intersect(Ray ray)
+        public bool Intersects(Ray ray)
         {
-         
+            float denominator = Vector.Dot(normal, ray.direction);
+            if (Math.Abs(denominator) > 1e-6f)
+            {
+                Vector pointOnPlane = position - ray.origin;
+                float t = Vector.Dot(pointOnPlane, normal) / denominator;
+                if (t > 0)
+                {
+                    Vector intersectionPoint = ray.origin + t * ray.direction;
+                    Vector relativePoint = intersectionPoint - position;
+                    if (Math.Abs(relativePoint.x) <= 5f && Math.Abs(relativePoint.y) <= 5f)
+                    {
+                        return true;
+                    }
+
+                }
+            }
+            return false;
         }
-      */
     }
-
 }

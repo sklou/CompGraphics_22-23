@@ -2,11 +2,11 @@
 using System;
 using Test;
 
-
 class Program
 {
     static void Main(string[] args)
     {
+        //Plane plane = new Plane(new Vector(0f, 0f, 10f), new Vector(0f, 0f, 1f));
         Sphere sphere = new Sphere(new Vector(0f, 0f, 10f), 4f);
         Camera camera = new Camera(new Vector(0f, 0f, 0f));
 
@@ -18,7 +18,8 @@ class Program
             for (int x = 0; x < width; x++)
             {
                 Ray ray = camera.GetRayThroughPixel(x, y, width, height);
-                if (sphere.Intersects(ray))
+                //if (plane.Intersects(ray))
+               if (sphere.Intersects(ray))
                 {
                     Console.Write("#");
                 }
