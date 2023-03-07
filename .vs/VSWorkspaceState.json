@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Basic_RayCaster",
+    "\\Basic_RayCaster\\Structures",
+    "\\Basic_RayCaster\\Tests"
   ],
+  "SelectedNode": "\\Basic_RayCaster\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

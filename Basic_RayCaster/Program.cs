@@ -1,4 +1,6 @@
 ﻿using Basic_RayCaster.Structures;
+using Basic_RayCaster.Tests;
+using NUnit.Framework;
 using System;
 using Test;
 
@@ -32,5 +34,29 @@ class Program
             }
             Console.WriteLine();
         }
+
+        SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
+        intersectionTests.SphereIntersectionTrue();
+        intersectionTests.SphereIntersectionFalse();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        /*
+        PlaneIntersectionTests intersectionTests = new PlaneIntersectionTests();
+        intersectionTests.PlaneIntersectionTrue();
+        intersectionTests.PlaneIntersectionFalse();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+        */
+        /*
+        DiscIntersectionTests intersectionTests = new DiscIntersectionTests();
+        intersectionTests.DiscIntersectionTrue();
+        intersectionTests.DiscIntersectionFalse();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+        */
     }
 }
