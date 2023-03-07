@@ -18,6 +18,7 @@ namespace Test
 
         public Ray GetRayThroughPixel(int x, int y, int width, int height)
         {
+           //float aspectSimbol = 8/10;
             float aspectRatio = width / height;
             float fov = 90f * (float)Math.PI / 180f; //Поле зору(fov) камери встановлюється на 60 градусів і перетворюється в радіани
             float halfHeight = (float)Math.Tan(fov / 2f);
