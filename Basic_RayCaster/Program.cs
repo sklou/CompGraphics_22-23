@@ -39,9 +39,9 @@ class Program
         }
     
         
-        //SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
-       // intersectionTests.SphereIntersectionTrue();
-       // intersectionTests.SphereIntersectionFalse();
+        SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
+        intersectionTests.SphereIntersectionTrue();
+        intersectionTests.SphereIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
