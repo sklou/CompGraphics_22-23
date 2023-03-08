@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xesRJXjCAC9vJzBp5i9KJGqmrkdQ8pI07jsR9E9gDj0t4VbOoe4QPdUuz7gTGqzqYdi1UOxVFdRd0JwA6a8TYA==",
+  "dgSpecHash": "Z8iQrhpQt31kgRRh18wTqo6dnrSO2tb+aEbz/PcSbs6dW6nUzSrbGaptyoaNst4BBlHFZN8xCNWYJEOfPaPAEQ==",
   "success": true,
-  "projectFilePath": "D:\\GitLab\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Basic_RayCaster\\Basic_RayCaster.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Danya\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Danya\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\Danya\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+  ],
   "logs": []
 }

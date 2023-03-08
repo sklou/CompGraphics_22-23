@@ -14,7 +14,7 @@ namespace Basic_RayCaster.Tests
             Disc disc = new Disc(discPosition, bigRadius, smallRadius);
 
             Vector rayOrigin = new Vector(0, 0, -10);
-            Vector rayDirection = new Vector(0, 0, 1);
+            Vector rayDirection = new Vector(1, 1, 0);
             Ray ray = new Ray(rayOrigin, rayDirection);
 
             bool intersects = disc.Intersects(ray);
@@ -30,7 +30,7 @@ namespace Basic_RayCaster.Tests
             Disc disc = new Disc(discPosition, bigRadius, smallRadius);
 
             Vector rayOrigin = new Vector(0, 0, -10);
-            Vector rayDirection = new Vector(1, 1, 0);
+            Vector rayDirection = new Vector(0, 0, 1);
             Ray ray = new Ray(rayOrigin, rayDirection);
 
             bool intersects = disc.Intersects(ray);
