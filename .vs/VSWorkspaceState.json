@@ -5,6 +5,6 @@
     "\\Basic_RayCaster\\Structures",
     "\\Basic_RayCaster\\Tests"
   ],
-  "SelectedNode": "\\Basic_RayCaster\\Structures\\Camera.cs",
+  "SelectedNode": "\\Basic_RayCaster\\Tests\\SphereIntersectionTests.cs",
   "PreviewInSolutionExplorer": false
 }

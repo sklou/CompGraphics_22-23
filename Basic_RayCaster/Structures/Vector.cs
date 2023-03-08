@@ -19,6 +19,8 @@ namespace Basic_RayCaster.Structures
             this.y = y;
             this.z = z;
         }
+
+        
         public static Vector operator +(Vector a, Vector b)
         {
             return new Vector(a.x + b.x, a.y + b.y, a.z + b.z);

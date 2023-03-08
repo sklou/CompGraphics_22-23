@@ -33,6 +33,7 @@ namespace Basic_RayCaster.Structures
              return true;
          }
       
-        }
+        
     }
 }
+
