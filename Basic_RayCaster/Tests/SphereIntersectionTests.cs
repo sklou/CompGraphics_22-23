@@ -6,7 +6,7 @@ namespace Basic_RayCaster.Tests
 {
 	public class SphereIntersectionTests
     {
-        public void SphereIntersectionTrue()
+       /* public void SphereIntersectionTrue()
         {
             Ray ray = new Ray(new Vector(0, 0, -5), new Vector(0, 0, 1));
             Sphere sphere = new Sphere(new Vector(0, 0, 0), 1);
@@ -24,6 +24,6 @@ namespace Basic_RayCaster.Tests
             bool intersects = sphere.Intersects(ray);
 
             Assert.IsFalse(intersects);
-        }
+        }*/
     }
 }

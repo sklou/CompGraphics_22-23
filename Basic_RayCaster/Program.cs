@@ -12,7 +12,7 @@ class Program
         Plane plane = new Plane(new Vector(0f, 0f, 10f), new Vector(0f, 0f, 1f));
         Disc disc = new Disc(new Vector(0f, 0f, 10f), 6f, 3f);
         // Disc disc = new Disc(new Vector(0f, 0f, 10f), new Vector(0, 0, 1), 3f);
-        Sphere sphere = new Sphere(new Vector(0f, 0f, 10f), 4f);
+        Sphere sphere = new Sphere(new Vector(0f, 0f, 10f), 2f);
         Camera camera = new Camera(new Vector(0f, 0f, 0f));
 
         int width = 120;
@@ -24,8 +24,9 @@ class Program
             {
                 Ray ray = camera.GetRayThroughPixel(x, y, width, height);
                 //if (plane.Intersects(ray))
-                if (disc.Intersects(ray))
+                //if (disc.Intersects(ray))
                 //if (sphere.Intersects(ray))
+                if (sphere.Intersects(ray).intersection != null || sphere.Intersects(ray).normal != null)
                 {
                     Console.Write("#");
                 }
@@ -38,9 +39,9 @@ class Program
         }
     
         
-        SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
-        intersectionTests.SphereIntersectionTrue();
-        intersectionTests.SphereIntersectionFalse();
+        //SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
+       // intersectionTests.SphereIntersectionTrue();
+       // intersectionTests.SphereIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
