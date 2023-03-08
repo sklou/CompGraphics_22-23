@@ -36,29 +36,26 @@ class Program
             Console.WriteLine();
         }
     
-        
-        SphereIntersectionTests intersectionTests = new SphereIntersectionTests();
-        intersectionTests.SphereIntersectionTrue();
-        intersectionTests.SphereIntersectionFalse();
+        SphereIntersectionTests intersectionTestsS = new SphereIntersectionTests();
+        intersectionTestsS.SphereIntersectionTrue();
+        intersectionTestsS.SphereIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
         
-        /*
-        PlaneIntersectionTests intersectionTests = new PlaneIntersectionTests();
-        intersectionTests.PlaneIntersectionTrue();
-        intersectionTests.PlaneIntersectionFalse();
+        PlaneIntersectionTests intersectionTestsP = new PlaneIntersectionTests();
+        intersectionTestsP.PlaneIntersectionTrue();
+        intersectionTestsP.PlaneIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        */
-        /*
-        DiscIntersectionTests intersectionTests = new DiscIntersectionTests();
-        intersectionTests.DiscIntersectionTrue();
-        intersectionTests.DiscIntersectionFalse();
+        
+        DiscIntersectionTests intersectionTestsD = new DiscIntersectionTests();
+        intersectionTestsD.DiscIntersectionTrue();
+        intersectionTestsD.DiscIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        */
+        
     }
 }

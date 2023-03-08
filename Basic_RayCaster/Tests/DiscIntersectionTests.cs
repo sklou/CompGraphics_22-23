@@ -6,36 +6,35 @@ namespace Basic_RayCaster.Tests
 {
     public class DiscIntersectionTests
     {
+        private Disc disc;
+        
+        public void SetUp()
+        {
+            Vector position = new Vector(0, 0, 0);
+            float radius_big = 2f;
+            float radius_small = 1f;
+            disc = new Disc(position, radius_big, radius_small);
+        }
         public void DiscIntersectionTrue()
         {
-            Vector discPosition = new Vector(0, 0, 0);
-            float bigRadius = 5.0f;
-            float smallRadius = 2.0f;
-            Disc disc = new Disc(discPosition, bigRadius, smallRadius);
+            Vector origin = new Vector(0, 0, -10);
+            Vector direction = new Vector(0, 0, 1);
+            Ray ray = new Ray(origin, direction);
 
-            Vector rayOrigin = new Vector(0, 0, -10);
-            Vector rayDirection = new Vector(1, 1, 0);
-            Ray ray = new Ray(rayOrigin, rayDirection);
+            bool result = disc.Intersects(ray);
 
-            bool intersects = disc.Intersects(ray);
-
-            Assert.IsTrue(intersects);
+            Assert.IsTrue(result);
         }
 
         public void DiscIntersectionFalse()
         {
-            Vector discPosition = new Vector(0, 0, 0);
-            float bigRadius = 5.0f;
-            float smallRadius = 2.0f;
-            Disc disc = new Disc(discPosition, bigRadius, smallRadius);
+            Vector origin = new Vector(0, 0, -10);
+            Vector direction = new Vector(1, 1, 0);
+            Ray ray = new Ray(origin, direction);
 
-            Vector rayOrigin = new Vector(0, 0, -10);
-            Vector rayDirection = new Vector(0, 0, 1);
-            Ray ray = new Ray(rayOrigin, rayDirection);
+            bool result = disc.Intersects(ray);
 
-            bool intersects = disc.Intersects(ray);
-
-            Assert.IsFalse(intersects);
+            Assert.IsFalse(result);
         }
     }
 }
