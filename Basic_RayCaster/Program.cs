@@ -14,7 +14,7 @@ class Program
         // Disc disc = new Disc(new Vector(0f, 0f, 10f), new Vector(0, 0, 1), 3f);
         Sphere sphere = new Sphere(new Vector(0f, 0f, 8f), 4f);
         Camera camera = new Camera(new Vector(0f, 0f, 0f));
-        Vector L = new Vector(3, 2, 1);
+        Vector L = new Vector(-3, 0, 0);
         L.Normalize();
 
 
@@ -60,22 +60,23 @@ class Program
                     Console.Write(" ");
 
                 }
-                //if (plane.Intersects(ray))
-                //if (disc.Intersects(ray))
-                //if (sphere.Intersects(ray))
-                /* if (sphere.Intersects(ray).intersection != null || sphere.Intersects(ray).normal != null)
-                 {
-                     Console.Write("#");
-                 }
-                 else
-                 {
-                     Console.Write(" ");
-                 }
-                */
+
+              /*  if (plane.Intersects(ray))*/
+                /*if (disc.Intersects(ray))*/
+                /*if (sphere.Intersects(ray))*/
+                /* if (sphere.Intersects(ray).intersection != null || sphere.Intersects(ray).normal != null)*/
+               /* {
+                           Console.Write("#");
+                       }
+                       else
+                       {
+                           Console.Write(" ");
+                       }*/
 
 
 
-                // Vector normal = new Vector(sphere.Intersects(ray).normal);
+
+
 
 
 
@@ -90,22 +91,22 @@ class Program
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        
-        /*
-        PlaneIntersectionTests intersectionTests = new PlaneIntersectionTests();
-        intersectionTests.PlaneIntersectionTrue();
-        intersectionTests.PlaneIntersectionFalse();
+
+
+        PlaneIntersectionTests intersectionTestsS = new PlaneIntersectionTests();
+        intersectionTestsS.PlaneIntersectionTrue();
+        intersectionTestsS.PlaneIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        */
-        /*
-        DiscIntersectionTests intersectionTests = new DiscIntersectionTests();
-        intersectionTests.DiscIntersectionTrue();
-        intersectionTests.DiscIntersectionFalse();
+
+
+       /* DiscIntersectionTests intersectionTest = new DiscIntersectionTests();
+        intersectionTest.DiscIntersectionTrue();
+        intersectionTest.DiscIntersectionFalse();
 
         Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-        */
+        Console.ReadKey();*/
+
     }
 }
