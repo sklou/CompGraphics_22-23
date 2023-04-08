@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic_RayCaster", "Basic_RayCaster.csproj", "{8FB7DAAB-3DFD-46A7-A979-93351A568C57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic_RayCaster", "Basic_RayCaster.csproj", "{8FB7DAAB-3DFD-46A7-A979-93351A568C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obj_reader", "..\Obj_reader\Obj_reader.csproj", "{FB1C5C8D-8547-48A5-A29A-8B2DCF94068B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8FB7DAAB-3DFD-46A7-A979-93351A568C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB7DAAB-3DFD-46A7-A979-93351A568C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FB7DAAB-3DFD-46A7-A979-93351A568C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1C5C8D-8547-48A5-A29A-8B2DCF94068B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1C5C8D-8547-48A5-A29A-8B2DCF94068B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1C5C8D-8547-48A5-A29A-8B2DCF94068B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1C5C8D-8547-48A5-A29A-8B2DCF94068B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
