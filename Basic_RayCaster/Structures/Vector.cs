@@ -59,6 +59,14 @@ namespace Basic_RayCaster.Structures
             a.Value.Normalize();
             return a.Value.x * b.x + a.Value.y * b.y + a.Value.z * b.z;
         }
+        public static Vector Cross(Vector a, Vector b)
+        {
+            return new Vector(
+                a.y * b.z - a.z * b.y,
+                a.z * b.x - a.x * b.z,
+                a.x * b.y - a.y * b.x
+            );
+        }
         public static float Distance(Vector a, Vector b)
         {
             return (float)Math.Sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y) + (a.z - b.z) * (a.z - b.z));
