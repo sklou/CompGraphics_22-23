@@ -1,0 +1,15 @@
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.csproj.AssemblyReference.cache
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.AssemblyInfoInputs.cache
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.AssemblyInfo.cs
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.csproj.CoreCompileInputs.cache
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\Obj_reader.exe
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\Obj_reader.deps.json
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\Obj_reader.runtimeconfig.json
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\Obj_reader.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\Obj_reader.pdb
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\refint\Obj_reader.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.pdb
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.genruntimeconfig.cache
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\ref\Obj_reader.dll
