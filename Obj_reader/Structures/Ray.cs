@@ -16,5 +16,7 @@ namespace Obj_reader.Structures
             this.origin = origin;
             this.direction = direction;
         }
+
+        
     }
 }

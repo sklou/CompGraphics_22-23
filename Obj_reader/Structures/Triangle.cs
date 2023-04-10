@@ -20,7 +20,6 @@ namespace Obj_reader.Structures
             this.b = b;
             this.c = c;
         }
-
         public (Vector? intersection, Vector? normal) Intersects(Ray ray)
         {
             Vector ab = b - a;
@@ -54,6 +53,9 @@ namespace Obj_reader.Structures
             normal.Normalize();
             return (intersectionPoint, normal);
         }
-    }
 
+
+    }
 }
+
+   
