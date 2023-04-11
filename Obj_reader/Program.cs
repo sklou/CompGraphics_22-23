@@ -2,6 +2,7 @@
 using System;
 using System.Xml.Linq;
 using System.Globalization;
+using System.IO;
 
 
 class Program
@@ -70,6 +71,8 @@ class Program
          List<Vector> vertices = parser.Vertices;
          List<Tuple<int, int, int>> triangleIndices = parser.TriangleIndices;
 
+
+
         Triangle[] triangles = new Triangle[triangleIndices.Count];
 
         for (int i = 0; i < triangleIndices.Count; i++)
@@ -85,20 +88,14 @@ class Program
             triangles[i] = new Triangle(vertex1, vertex2, vertex3);
         }
 
+        Camera camera = new Camera(new Vector(0f, 0f, -0.2f));
 
-        Camera camera = new Camera(new Vector(0f, 0f, 0f));
-
-       // Triangle[] triangles = new Triangle[3];
-        //triangles[0] = new Triangle(new Vector(3f, 0f, 10f), new Vector(-3f, 0f, 5f), new Vector(0f, 5f, 5f));
-      //  triangles[1] = new Triangle(new Vector(-3f, -5f, 10f), new Vector(3f, -5f, 5f), new Vector(0f, 0f, 5f));
-       // triangles[2] = new Triangle(new Vector(0f, 5f, 15f), new Vector(-3f, -5f, 15f), new Vector(3f, -5f, 15f));
-
-        Vector L = new Vector(2, 0, 1);
+        Vector L = new Vector(-0.5f, 0, 1);
         L.Normalize();
 
-        int width = 120;
-        int height = 40;
-
+        int width = 200;
+        int height = 80;
+        Color[,] image = new Color[width, height];
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -106,10 +103,10 @@ class Program
                 Ray ray = camera.GetRayThroughPixel(x, y, width, height);
                 float result;
 
-
                 // Перевіряємо перетин з кожним трикутником
                 bool hit = false;
-                float minDistance = float.MaxValue; 
+                float minDistance = float.MaxValue;
+                Vector? intersectionPoint = null; // Точка перетину
                 Vector? normal = null; // Нормаль до перетину
                 foreach (Triangle triangle in triangles)
                 {
@@ -120,41 +117,75 @@ class Program
                     {
                         // Обчислюємо відстань до перетину
                         Vector distance = (intersection.intersection.Value - ray.origin);
-                       float dist = distance.Magnitude();
+                        float dist = distance.Magnitude();
 
                         if (dist < minDistance)
                         {
                             minDistance = dist;
+                            intersectionPoint = intersection.intersection.Value;
                             normal = intersection.normal;
                             hit = true;
                         }
                     }
                 }
 
+                bool inShadow = false;
+
                 // Якщо було перетин з найближчим трикутником
                 if (hit)
                 {
-                    result = Vector.Dot(normal, L);
+                    // Створюємо новий промінь R2 від точки перетину до джерела світла
+                    Vector lightDirection = (L - intersectionPoint.Value);
+                    lightDirection.Normalize();
 
-                    if (result < 0)
+                    Ray shadowRay = new Ray(intersectionPoint.Value + 0.001f * lightDirection, lightDirection);
+
+                    // Перевіряємо перетин з іншими трикутниками на сцені
+                    foreach (Triangle triangle in triangles)
                     {
-                        Console.Write(" ");
+                        if (triangle.Intersects(shadowRay).intersection.HasValue)
+                        {
+                            inShadow = true;
+                            break;
+                        }
                     }
-                    else if (result < 0.2)
+
+                    if (inShadow)
                     {
-                        Console.Write(".");
-                    }
-                    else if (result < 0.5)
-                    {
-                        Console.Write("*");
-                    }
-                    else if (result < 0.8)
-                    {
-                        Console.Write("O");
+                        result = Vector.Dot(normal, lightDirection);
+
+                        if (result < 0)
+                        {
+                            Console.Write("=");
+                            image[x, y] = new Color(0, 0, 0);
+                        }
+                        else if (result < 0.2)
+                        {
+                            Console.Write("*");
+                            image[x, y] = new Color(64, 64, 64);
+                        }
+                        else if (result < 0.5)
+                        {
+                            Console.Write("#");
+                            image[x, y] = new Color(128, 128, 128);
+                        }
+                        else if (result < 0.8)
+                        {
+                            Console.Write("%");
+                            image[x, y] = new Color(192, 192, 192);
+                        }
+                        else
+                        {
+                            //█
+                            Console.Write("@");
+                            image[x, y] = new Color(255, 255, 255);
+                        }
                     }
                     else
                     {
-                        Console.Write("#");
+                        Console.Write(" ");
+                        image[x, y] = new Color(0, 0, 0);
+
                     }
                 }
                 else
@@ -165,6 +196,28 @@ class Program
             }
             Console.WriteLine();
         }
+
+        string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
+        using (StreamWriter writer = new StreamWriter(outputPath))
+        {
+            writer.WriteLine("P3");
+            writer.WriteLine($"{width} {height}");
+            writer.WriteLine("255");
+
+            for (int y2 = 0; y2 < height; y2++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    Color color = image[x, y2];
+                    writer.Write($"{color.R} {color.G} {color.B} ");
+                }
+                writer.WriteLine();
+            }
+        }
+
+        Console.WriteLine($"Зображення збережено у файлі: {outputPath}");
+
+
 
     }
 }
