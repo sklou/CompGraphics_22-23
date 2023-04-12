@@ -1,9 +1,10 @@
 ﻿using Obj_reader.Structures;
+using Obj_reader.Tests;
 using System;
 using System.Xml.Linq;
 using System.Globalization;
 using System.IO;
-
+using NUnit.Framework;
 
 class Program
 {
@@ -217,7 +218,75 @@ class Program
 
         Console.WriteLine($"Зображення збережено у файлі: {outputPath}");
 
+        //Tests usage
+        /*
+        //Camera tests usage
+        CameraTests CameraTesting = new CameraTests();
+        CameraTesting.GetRayThroughPixel_CorrectDirection();
+        CameraTesting.GetRayThroughPixel_CorrectOrigin();
+        CameraTesting.GetRayThroughPixel_NormalizedDirection();
 
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
 
+        //Intersection tests usage
+        IntersectionTests IntersectionTesting = new IntersectionTests();
+        IntersectionTesting.TestIntersectionInitialization();
+        IntersectionTesting.TestDefaultNormalValue();
+        IntersectionTesting.TestIntersectionFieldAssignment();
+        IntersectionTesting.TestDefaultHitValue();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        //Normal tests usage
+        NormalTests NormalTesting = new NormalTests();
+        NormalTesting.TestNormalCreation();
+        NormalTesting.TestNormalAddition();
+        NormalTesting.TestNormalSubtraction();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        //Point tests usage
+        PointTests PointTesting = new PointTests();
+        PointTesting.TestPointConstructor();
+        PointTesting.TestSetX();
+        PointTesting.TestSetY();
+        PointTesting.TestSetZ();
+        PointTesting.TestPointEquality();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        //Ray tests usage
+        RayTests RayTesting = new RayTests();
+        RayTesting.TestRayInitialization();
+        RayTesting.TestRayPointAt();
+        RayTesting.TestRayEquality();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        //Vector tests usage
+        VectorTests VectorTesting = new VectorTests();
+        VectorTesting.VectorConstructorTest();
+        VectorTesting.VectorNormalizeTest();
+        VectorTesting.VectorMagnitudeTest();
+        VectorTesting.VectorToVectorTest();
+        VectorTesting.VectorDotTest();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+        //Parse file tests usage
+        ParseFileTests ParseFileTesting = new ParseFileTests();
+        ParseFileTesting.ParseVertex_AddsVertexToList();
+        ParseFileTesting.ParseFile_AddsTriangleToList();
+        ParseFileTesting.ParseFile_DoesNotAddAnything();
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+        */
     }
 }
