@@ -13,3 +13,4 @@ D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\refint\Obj_reader.dll
 D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.pdb
 D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.genruntimeconfig.cache
 D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\ref\Obj_reader.dll
+C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.pdb
