@@ -5,6 +5,8 @@ using System.Xml.Linq;
 using System.Globalization;
 using System.IO;
 using NUnit.Framework;
+using System.Security.Cryptography;
+
 
 class Program
 {
@@ -89,12 +91,64 @@ class Program
             triangles[i] = new Triangle(vertex1, vertex2, vertex3);
         }
 
-        Camera camera = new Camera(new Vector(0f, 0f, -0.2f));
+        //----------------------------------Matrix_Transfor_for_obj---------------------//
+        float scaleX = 1f;
+        float scaleY = 1f;
+        float scaleZ = 1f;
+        Matrix scaleMatrix = Matrix.Scaling(scaleX, scaleY, scaleZ);
 
-        Vector L = new Vector(-0.5f, 0, 1);
+        float transX = 0f;
+        float transY = 0f;
+        float transZ = 0f;
+        Matrix translateMatrix = Matrix.Translation(transX, transY, transZ);
+
+        float angleX = (float)(0f * (Math.PI / 180));
+        float angleY = (float)(0f * (Math.PI / 180));     //-90
+        float angleZ = (float)(0f * (Math.PI/180));         // 90
+        Matrix rotateMatrix = Matrix.RotationX(angleX) * Matrix.RotationY(angleY) * Matrix.RotationZ(angleZ);
+
+
+        Matrix transformMatrix = translateMatrix * rotateMatrix * scaleMatrix;
+       // Matrix transformMatrix = rotateMatrix;
+
+        for (int i = 0; i < triangles.Length; i++)
+        {
+            triangles[i].a = Vector.Transform(triangles[i].a, transformMatrix);
+            triangles[i].b = Vector.Transform(triangles[i].b, transformMatrix);
+            triangles[i].c = Vector.Transform(triangles[i].c, transformMatrix);
+        }
+
+        //----------------------------------Matrix_Transfor_for_camera---------------------//
+        float scaleX_C = 1f;
+        float scaleY_C = 1f;
+        float scaleZ_C = 1f;
+        Matrix scaleCam = Matrix.Scaling(scaleX_C, scaleY_C, scaleZ_C);
+
+        float transX_C = 0f;
+        float transY_C = 0f;
+        float transZ_C = 0f;       //-1
+        Matrix translateCam = Matrix.Translation(transX_C, transY_C, transZ_C);
+
+        float angleX_C = (float)(0f * (Math.PI / 180));
+        float angleY_C = (float)(0f * (Math.PI / 180));
+        float angleZ_C = (float)(0f * (Math.PI / 180));
+        Matrix rotateCam = Matrix.RotationX(angleX_C) * Matrix.RotationY(angleY_C) * Matrix.RotationZ(angleZ_C);
+
+
+        Matrix transformCam = translateCam * rotateCam * scaleCam;
+        Camera camera = new Camera(new Vector(0f, 0f, 0f));
+
+        camera.position = Vector.Transform(camera.position, transformCam);
+
+
+       // Vector L = new Vector(0f, 0, 1);
+        Vector L = new Vector(0.5f, 0, 1);
         L.Normalize();
 
-        int width = 200;
+        //int width = 400;
+        //int height = 120;
+
+        int width = 180;
         int height = 80;
         Color[,] image = new Color[width, height];
         for (int y = 0; y < height; y++)
@@ -104,7 +158,7 @@ class Program
                 Ray ray = camera.GetRayThroughPixel(x, y, width, height);
                 float result;
 
-                // Перевіряємо перетин з кожним трикутником
+                
                 bool hit = false;
                 float minDistance = float.MaxValue;
                 Vector? intersectionPoint = null; // Точка перетину
@@ -113,10 +167,10 @@ class Program
                 {
                     var intersection = triangle.Intersects(ray);
 
-                    // Якщо є точка перетину
+                   
                     if (intersection.intersection.HasValue)
                     {
-                        // Обчислюємо відстань до перетину
+                       
                         Vector distance = (intersection.intersection.Value - ray.origin);
                         float dist = distance.Magnitude();
 
@@ -135,7 +189,7 @@ class Program
                 // Якщо було перетин з найближчим трикутником
                 if (hit)
                 {
-                    // Створюємо новий промінь R2 від точки перетину до джерела світла
+                   //новий промінь
                     Vector lightDirection = (L - intersectionPoint.Value);
                     lightDirection.Normalize();
 
@@ -158,7 +212,7 @@ class Program
                         if (result < 0)
                         {
                             Console.Write("=");
-                            image[x, y] = new Color(0, 0, 0);
+                            image[x, y] = new Color(32, 32, 32);
                         }
                         else if (result < 0.2)
                         {
@@ -219,12 +273,12 @@ class Program
         Console.WriteLine($"Зображення збережено у файлі: {outputPath}");
 
         //Tests usage
-        /*
+       
         //Camera tests usage
         CameraTests CameraTesting = new CameraTests();
-        CameraTesting.GetRayThroughPixel_CorrectDirection();
-        CameraTesting.GetRayThroughPixel_CorrectOrigin();
-        CameraTesting.GetRayThroughPixel_NormalizedDirection();
+    //    CameraTesting.GetRayThroughPixel_CorrectDirection();
+  //      CameraTesting.GetRayThroughPixel_CorrectOrigin();
+   //     CameraTesting.GetRayThroughPixel_NormalizedDirection();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
@@ -281,12 +335,14 @@ class Program
 
         //Parse file tests usage
         ParseFileTests ParseFileTesting = new ParseFileTests();
-        ParseFileTesting.ParseVertex_AddsVertexToList();
-        ParseFileTesting.ParseFile_AddsTriangleToList();
-        ParseFileTesting.ParseFile_DoesNotAddAnything();
+        ParseFileTesting.VerticesList_IsNotNull();
+        ParseFileTesting.TriangleIndicesList_IsNotNull();
+        ParseFileTesting.ParseFile_ThrowsException_WhenFileDoesNotExist();
+        ParseFileTesting.ParseFile_PopulatesVerticesList_WithCorrectValues();
+        ParseFileTesting.ParseFile_PopulatesTriangleIndicesList_WithCorrectValues();
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        */
+        
     }
 }

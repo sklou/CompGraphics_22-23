@@ -16,7 +16,10 @@ namespace Obj_reader.Structures
             this.origin = origin;
             this.direction = direction;
         }
+        public Vector PointAt(float t)
+        {
+            return origin + t * direction;
+        }
 
-        
     }
 }

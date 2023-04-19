@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3LZGiQcJ01LIQkOZFxssejqkNp4EhzM8yibe62Bdt5TR+4DHbGj9v34d+M4RsQlX+1P0wlpHUMjKyRWYx9QZ1w==",
+  "dgSpecHash": "tX2aBZOyFnEvaPQqQr8iexylr0yo4dt7njHVFivyYHoXvA4NfQUVzfTJCmb4PHBKBRyXSfXzTzVeLkXVKkdBWw==",
   "success": true,
   "projectFilePath": "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\Obj_reader.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mcmcm\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\mcmcm\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\mcmcm\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\mcmcm\\.nuget\\packages\\nunit3testadapter\\4.5.0-alpha.4\\nunit3testadapter.4.5.0-alpha.4.nupkg.sha512"
+  ],
   "logs": []
 }

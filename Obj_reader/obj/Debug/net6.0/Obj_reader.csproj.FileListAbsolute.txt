@@ -14,3 +14,11 @@ D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.pdb
 D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.genruntimeconfig.cache
 D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\ref\Obj_reader.dll
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.pdb
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\nunit.engine.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\nunit.engine.api.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\nunit.engine.core.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\testcentric.engine.metadata.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\bin\Debug\net6.0\nunit.framework.dll
+D:\GitLab\CompGraphics_22-23\Obj_reader\obj\Debug\net6.0\Obj_reader.csproj.CopyComplete

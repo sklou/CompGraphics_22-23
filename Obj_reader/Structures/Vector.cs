@@ -101,5 +101,23 @@ namespace Obj_reader.Structures
 
             return dotProduct;
         }
+
+
+        public static Vector Transform(Vector vector, Matrix matrix)
+        {
+            if (matrix.Values.GetLength(0) != 4 || matrix.Values.GetLength(1) != 4)
+            {
+                throw new ArgumentException("Matrix must be a 4x4 matrix.");
+            }
+
+            float x = vector.x * matrix.Values[0, 0] + vector.y * matrix.Values[1, 0] + vector.z * matrix.Values[2, 0] + matrix.Values[3, 0];
+            float y = vector.x * matrix.Values[0, 1] + vector.y * matrix.Values[1, 1] + vector.z * matrix.Values[2, 1] + matrix.Values[3, 1];
+            float z = vector.x * matrix.Values[0, 2] + vector.y * matrix.Values[1, 2] + vector.z * matrix.Values[2, 2] + matrix.Values[3, 2];
+
+            return new Vector(x, y, z);
+        }
+
+       
+
     }
 }

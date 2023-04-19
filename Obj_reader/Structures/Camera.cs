@@ -20,7 +20,7 @@ namespace Obj_reader.Structures
         {
             float aspectPixel = 11f/24f;
             float aspectRatio = width / height;
-            float fov = 90f * (float)Math.PI / 180f; //Поле зору(fov) камери встановлюється на 60 градусів і перетворюється в радіани
+            float fov = 45f * (float)Math.PI / 180f; //Поле зору(fov) камери встановлюється на 60 градусів і перетворюється в радіани
             float halfHeight = (float)Math.Tan(fov / 2f);
             float halfWidth = aspectRatio * halfHeight * aspectPixel;
             float pixelWidth = halfWidth * 2f / width;

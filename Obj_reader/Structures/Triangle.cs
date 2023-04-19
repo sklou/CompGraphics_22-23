@@ -46,12 +46,20 @@ namespace Obj_reader.Structures
             float t = Vector.Dot(ac, q) * invDet;
             if (t < 0)
             {
-                return (null, null);
+                
+                Vector intersectionPoint = ray.origin + t * ray.direction;
+                Vector normal = Vector.Cross(ab, ac);
+                normal.Normalize();
+                return (intersectionPoint, -1 * normal);
             }
-            Vector intersectionPoint = ray.origin + t * ray.direction;
-            Vector normal = Vector.Cross(ab, ac);
-            normal.Normalize();
-            return (intersectionPoint, normal);
+            else
+            {
+                
+                Vector intersectionPoint = ray.origin + t * ray.direction;
+                Vector normal = Vector.Cross(ab, ac);
+                normal.Normalize();
+                return (intersectionPoint, normal);
+            }
         }
 
 

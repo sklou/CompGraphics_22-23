@@ -1,47 +1,49 @@
 ﻿using System;
 using NUnit.Framework;
 using Obj_reader.Structures;
+using static Program;
 
 namespace Obj_reader.Tests
 {
-	public class ParseFileTests
+    public class ParseFileTests
     {
-        public void ParseVertex_AddsVertexToList()
+        [Test]
+        public void VerticesList_IsNotNull()
         {
-            var objParser = new ObjParser();
-            var expectedVertex = new Vector(1.0f, 2.0f, 3.0f);
-
-            objParser.ParseVertex(new[] { "v", "1.0", "2.0", "3.0" });
-
-            Assert.AreEqual(1, objParser.Vertices.Count);
-            Assert.AreEqual(expectedVertex, objParser.Vertices[0]);
+            ObjParser parser = new ObjParser();
+            Assert.IsNotNull(parser.Vertices);
         }
 
-        public void ParseFile_AddsTriangleToList()
+        [Test]
+        public void TriangleIndicesList_IsNotNull()
         {
-            var objParser = new ObjParser();
-            var expectedIndices = new Tuple<int, int, int>(0, 1, 2);
-
-            objParser.Vertices.AddRange(new[] {
-                new Vector(1.0f, 0.0f, 0.0f),
-                new Vector(0.0f, 1.0f, 0.0f),
-                new Vector(0.0f, 0.0f, 1.0f)
-            });
-            objParser.ParseFile(new[] { "f", "1/1/1", "2/2/2", "3/3/3" });
-
-            Assert.AreEqual(1, objParser.TriangleIndices.Count);
-            Assert.AreEqual(expectedIndices, objParser.TriangleIndices[0]);
+            ObjParser parser = new ObjParser();
+            Assert.IsNotNull(parser.TriangleIndices);
         }
 
-        public void ParseFile_DoesNotAddAnything()
+        [Test]
+        public void ParseFile_ThrowsException_WhenFileDoesNotExist()
         {
-            var objParser = new ObjParser();
-            var emptyFilePath = "empty.obj";
+            ObjParser parser = new ObjParser();
+            Assert.Throws<FileNotFoundException>(() => parser.ParseFile("non-existent-file.obj"));
+        }
 
-            objParser.ParseFile(emptyFilePath);
+        [Test]
+        public void ParseFile_PopulatesVerticesList_WithCorrectValues()
+        {
+            ObjParser parser = new ObjParser();
+            parser.ParseFile("test.obj");
+            Assert.AreEqual(new Vector(0.0f, 0.0f, 0.0f), parser.Vertices[0]);
+            Assert.AreEqual(new Vector(1.0f, 0.0f, 0.0f), parser.Vertices[1]);
+            Assert.AreEqual(new Vector(0.0f, 1.0f, 0.0f), parser.Vertices[2]);
+        }
 
-            Assert.IsEmpty(objParser.Vertices);
-            Assert.IsEmpty(objParser.TriangleIndices);
+        [Test]
+        public void ParseFile_PopulatesTriangleIndicesList_WithCorrectValues()
+        {
+            ObjParser parser = new ObjParser();
+            parser.ParseFile("test.obj");
+            Assert.AreEqual(new Tuple<int, int, int>(0, 1, 2), parser.TriangleIndices[0]);
         }
     }
 }
