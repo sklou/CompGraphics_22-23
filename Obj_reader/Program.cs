@@ -10,60 +10,7 @@ using System.Security.Cryptography;
 
 class Program
 {
-    public class ObjParser
-    {
-        public List<Vector> Vertices { get; private set; }
-        public List<Tuple<int, int, int>> TriangleIndices { get; private set; }
-
-        public ObjParser()
-        {
-            Vertices = new List<Vector>();
-            TriangleIndices = new List<Tuple<int, int, int>>();
-        }
-
-        public void ParseFile(string filePath)
-        {
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    if (parts.Length > 0)
-                    {
-                        switch (parts[0])
-                        {
-                            case "v":
-                                ParseVertex(parts);
-                                break;
-                            case "f":
-                                ParseFace(parts);
-                                break;
-                        }
-                    }
-                }
-            }
-        }
-
-        private void ParseVertex(string[] parts)
-        {
-            float x = float.Parse(parts[1], CultureInfo.InvariantCulture);
-            float y = float.Parse(parts[2], CultureInfo.InvariantCulture);
-            float z = float.Parse(parts[3], CultureInfo.InvariantCulture);
-            Vertices.Add(new Vector(x, y, z));
-        }
-
-        private void ParseFace(string[] parts)
-        {
-            int v1 = int.Parse(parts[1].Split('/')[0]) - 1;
-            int v2 = int.Parse(parts[2].Split('/')[0]) - 1;
-            int v3 = int.Parse(parts[3].Split('/')[0]) - 1;
-            TriangleIndices.Add(new Tuple<int, int, int>(v1, v2, v3));
-        }
-    }
-
-
+ 
     static void Main(string[] args)
     {
          string objFilePath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.obj";
@@ -74,22 +21,7 @@ class Program
          List<Vector> vertices = parser.Vertices;
          List<Tuple<int, int, int>> triangleIndices = parser.TriangleIndices;
 
-
-
-        Triangle[] triangles = new Triangle[triangleIndices.Count];
-
-        for (int i = 0; i < triangleIndices.Count; i++)
-        {
-            int index1 = triangleIndices[i].Item1;
-            int index2 = triangleIndices[i].Item2;
-            int index3 = triangleIndices[i].Item3;
-
-            Vector vertex1 = vertices[index1];
-            Vector vertex2 = vertices[index2];
-            Vector vertex3 = vertices[index3];
-
-            triangles[i] = new Triangle(vertex1, vertex2, vertex3);
-        }
+        Triangle[] triangles = Triangle.CreateTriangles(triangleIndices, vertices);
 
         //----------------------------------Matrix_Transfor_for_obj---------------------//
         float scaleX = 1f;
@@ -109,7 +41,6 @@ class Program
 
 
         Matrix transformMatrix = translateMatrix * rotateMatrix * scaleMatrix;
-       // Matrix transformMatrix = rotateMatrix;
 
         for (int i = 0; i < triangles.Length; i++)
         {
@@ -126,7 +57,7 @@ class Program
 
         float transX_C = 0f;
         float transY_C = 0f;
-        float transZ_C = 0f;       //-1
+        float transZ_C = -1f;       //-1
         Matrix translateCam = Matrix.Translation(transX_C, transY_C, transZ_C);
 
         float angleX_C = (float)(0f * (Math.PI / 180));
@@ -144,13 +75,14 @@ class Program
        // Vector L = new Vector(0f, 0, 1);
         Vector L = new Vector(0.5f, 0, 1);
         L.Normalize();
+ 
 
-        //int width = 400;
-        //int height = 120;
-
-        int width = 180;
-        int height = 80;
-        Color[,] image = new Color[width, height];
+        int width = 320;
+        int height = 240;
+        
+        //int width = 240;
+       // int height = 80;
+        Color[,] image = new Color[width, height*3];
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -252,12 +184,18 @@ class Program
             Console.WriteLine();
         }
 
+
+
+
+       
         string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
         using (StreamWriter writer = new StreamWriter(outputPath))
         {
-            writer.WriteLine("P3");
-            writer.WriteLine($"{width} {height}");
-            writer.WriteLine("255");
+            writer.Write("P3\n");
+            writer.Write(width);
+            writer.Write(" ");
+            writer.Write(height);
+            writer.Write("\n255\n");
 
             for (int y2 = 0; y2 < height; y2++)
             {

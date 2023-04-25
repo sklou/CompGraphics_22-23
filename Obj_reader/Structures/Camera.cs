@@ -18,7 +18,8 @@ namespace Obj_reader.Structures
 
         public Ray GetRayThroughPixel(int x, int y, int width, int height)
         {
-            float aspectPixel = 11f/24f;
+            //float aspectPixel = 11f/24f;
+            float aspectPixel = 1f;
             float aspectRatio = width / height;
             float fov = 45f * (float)Math.PI / 180f; //Поле зору(fov) камери встановлюється на 60 градусів і перетворюється в радіани
             float halfHeight = (float)Math.Tan(fov / 2f);

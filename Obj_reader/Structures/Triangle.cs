@@ -20,6 +20,8 @@ namespace Obj_reader.Structures
             this.b = b;
             this.c = c;
         }
+
+
         public (Vector? intersection, Vector? normal) Intersects(Ray ray)
         {
             Vector ab = b - a;
@@ -62,6 +64,25 @@ namespace Obj_reader.Structures
             }
         }
 
+        public static Triangle[] CreateTriangles(List<Tuple<int, int, int>> triangleIndices, List<Vector> vertices)
+        {
+            Triangle[] triangles = new Triangle[triangleIndices.Count];
+
+            for (int i = 0; i < triangleIndices.Count; i++)
+            {
+                int index1 = triangleIndices[i].Item1;
+                int index2 = triangleIndices[i].Item2;
+                int index3 = triangleIndices[i].Item3;
+
+                Vector vertex1 = vertices[index1];
+                Vector vertex2 = vertices[index2];
+                Vector vertex3 = vertices[index3];
+
+                triangles[i] = new Triangle(vertex1, vertex2, vertex3);
+            }
+
+            return triangles;
+        }
 
     }
 }
