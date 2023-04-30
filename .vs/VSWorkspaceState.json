@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Obj_reader",
-    "\\Obj_reader\\Structures"
+    "\\Convertor"
   ],
-  "SelectedNode": "\\Obj_reader\\Program.cs",
+  "SelectedNode": "\\Convertor\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
