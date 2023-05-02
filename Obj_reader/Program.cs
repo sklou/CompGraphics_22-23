@@ -6,16 +6,51 @@ using System.Globalization;
 using System.IO;
 using NUnit.Framework;
 using System.Security.Cryptography;
-
+using Obj_reader.Interface;
 
 class Program
 {
- 
+
+
     static void Main(string[] args)
     {
-         string objFilePath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.obj";
+       
+        string objFilePath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.obj";
+         string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
+      //  string objFilePath = null;
+      //  string outputPath = null;
+        foreach (string arg in args)
+        {
+            if (arg.StartsWith("--source="))
+            {
+                objFilePath = arg.Substring("--source=".Length);
+            }
+            else if (arg.StartsWith("--output="))
+            {
+                outputPath = arg.Substring("--output=".Length);
+            }
+        }
+        if (objFilePath == null)
+        {
+            Console.WriteLine("Error: no input file provided (--source=<path to obj file>)");
+            return;
+        }
+        if (!File.Exists(objFilePath))
+        {
+            Console.WriteLine($"Error: input file '{objFilePath}' does not exist");
+            return;
+        }
 
-         ObjParser parser = new ObjParser();
+        if (outputPath != null)
+        {
+        
+        }
+        else     //if outputPath was not mentioned == null == output into console
+        {
+            Console.WriteLine("Render");
+        }
+
+         ObjParser parser = new();
          parser.ParseFile(objFilePath);
 
          List<Vector> vertices = parser.Vertices;
@@ -185,102 +220,84 @@ class Program
         }
 
 
+        IImageWriter writer = new PpmImageWriter();
+        writer.WriteImageToFile(image, width, height, outputPath);
 
-
-       
-        string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
-        using (StreamWriter writer = new StreamWriter(outputPath))
+        while (true)
         {
-            writer.Write("P3\n");
-            writer.Write(width);
-            writer.Write(" ");
-            writer.Write(height);
-            writer.Write("\n255\n");
+            //Tests usage
 
-            for (int y2 = 0; y2 < height; y2++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    Color color = image[x, y2];
-                    writer.Write($"{color.R} {color.G} {color.B} ");
-                }
-                writer.WriteLine();
-            }
+            //Camera tests usage
+            CameraTests CameraTesting = new CameraTests();
+            //    CameraTesting.GetRayThroughPixel_CorrectDirection();
+            //      CameraTesting.GetRayThroughPixel_CorrectOrigin();
+            //     CameraTesting.GetRayThroughPixel_NormalizedDirection();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Intersection tests usage
+            IntersectionTests IntersectionTesting = new IntersectionTests();
+            IntersectionTesting.TestIntersectionInitialization();
+            IntersectionTesting.TestDefaultNormalValue();
+            IntersectionTesting.TestIntersectionFieldAssignment();
+            IntersectionTesting.TestDefaultHitValue();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Normal tests usage
+            NormalTests NormalTesting = new NormalTests();
+            NormalTesting.TestNormalCreation();
+            NormalTesting.TestNormalAddition();
+            NormalTesting.TestNormalSubtraction();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Point tests usage
+            PointTests PointTesting = new PointTests();
+            PointTesting.TestPointConstructor();
+            PointTesting.TestSetX();
+            PointTesting.TestSetY();
+            PointTesting.TestSetZ();
+            PointTesting.TestPointEquality();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Ray tests usage
+            RayTests RayTesting = new RayTests();
+            RayTesting.TestRayInitialization();
+            RayTesting.TestRayPointAt();
+            RayTesting.TestRayEquality();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Vector tests usage
+            VectorTests VectorTesting = new VectorTests();
+            VectorTesting.VectorConstructorTest();
+            VectorTesting.VectorNormalizeTest();
+            VectorTesting.VectorMagnitudeTest();
+            VectorTesting.VectorToVectorTest();
+            VectorTesting.VectorDotTest();
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+            //Parse file tests usage
+            ParseFileTests ParseFileTesting = new ParseFileTests();
+            ParseFileTesting.VerticesList_IsNotNull();
+            ParseFileTesting.TriangleIndicesList_IsNotNull();
+            ParseFileTesting.ParseFile_ThrowsException_WhenFileDoesNotExist();
+            ParseFileTesting.ParseFile_PopulatesVerticesList_WithCorrectValues();
+            ParseFileTesting.ParseFile_PopulatesTriangleIndicesList_WithCorrectValues();
+
+            Console.WriteLine("Press any key to exit.");
+            break;
+            Console.ReadKey();
+
         }
-
-        Console.WriteLine($"Зображення збережено у файлі: {outputPath}");
-
-        //Tests usage
-       
-        //Camera tests usage
-        CameraTests CameraTesting = new CameraTests();
-    //    CameraTesting.GetRayThroughPixel_CorrectDirection();
-  //      CameraTesting.GetRayThroughPixel_CorrectOrigin();
-   //     CameraTesting.GetRayThroughPixel_NormalizedDirection();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Intersection tests usage
-        IntersectionTests IntersectionTesting = new IntersectionTests();
-        IntersectionTesting.TestIntersectionInitialization();
-        IntersectionTesting.TestDefaultNormalValue();
-        IntersectionTesting.TestIntersectionFieldAssignment();
-        IntersectionTesting.TestDefaultHitValue();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Normal tests usage
-        NormalTests NormalTesting = new NormalTests();
-        NormalTesting.TestNormalCreation();
-        NormalTesting.TestNormalAddition();
-        NormalTesting.TestNormalSubtraction();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Point tests usage
-        PointTests PointTesting = new PointTests();
-        PointTesting.TestPointConstructor();
-        PointTesting.TestSetX();
-        PointTesting.TestSetY();
-        PointTesting.TestSetZ();
-        PointTesting.TestPointEquality();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Ray tests usage
-        RayTests RayTesting = new RayTests();
-        RayTesting.TestRayInitialization();
-        RayTesting.TestRayPointAt();
-        RayTesting.TestRayEquality();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Vector tests usage
-        VectorTests VectorTesting = new VectorTests();
-        VectorTesting.VectorConstructorTest();
-        VectorTesting.VectorNormalizeTest();
-        VectorTesting.VectorMagnitudeTest();
-        VectorTesting.VectorToVectorTest();
-        VectorTesting.VectorDotTest();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-
-        //Parse file tests usage
-        ParseFileTests ParseFileTesting = new ParseFileTests();
-        ParseFileTesting.VerticesList_IsNotNull();
-        ParseFileTesting.TriangleIndicesList_IsNotNull();
-        ParseFileTesting.ParseFile_ThrowsException_WhenFileDoesNotExist();
-        ParseFileTesting.ParseFile_PopulatesVerticesList_WithCorrectValues();
-        ParseFileTesting.ParseFile_PopulatesTriangleIndicesList_WithCorrectValues();
-
-        Console.WriteLine("Press any key to exit.");
-        Console.ReadKey();
-        
     }
 }
