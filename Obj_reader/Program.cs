@@ -4,9 +4,10 @@ using System;
 using System.Xml.Linq;
 using System.Globalization;
 using System.IO;
-using NUnit.Framework;
 using System.Security.Cryptography;
 using Obj_reader.Interface;
+using Obj_reader;
+using NUnit.Framework;
 
 class Program
 {
@@ -15,10 +16,10 @@ class Program
     static void Main(string[] args)
     {
        
-        string objFilePath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.obj";
-         string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
-      //  string objFilePath = null;
-      //  string outputPath = null;
+       // string objFilePath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.obj";
+       //  string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Obj_reader\\forRender\\cow.ppm";
+        string objFilePath = null;
+        string outputPath = null;
         foreach (string arg in args)
         {
             if (arg.StartsWith("--source="))
@@ -41,20 +42,12 @@ class Program
             return;
         }
 
-        if (outputPath != null)
-        {
-        
-        }
-        else     //if outputPath was not mentioned == null == output into console
-        {
-            Console.WriteLine("Render");
-        }
 
-         ObjParser parser = new();
-         parser.ParseFile(objFilePath);
+        ObjParser parser = new();
+        parser.ParseFile(objFilePath);
 
-         List<Vector> vertices = parser.Vertices;
-         List<Tuple<int, int, int>> triangleIndices = parser.TriangleIndices;
+        List<Vector> vertices = parser.Vertices;
+        List<Tuple<int, int, int>> triangleIndices = parser.TriangleIndices;
 
         Triangle[] triangles = Triangle.CreateTriangles(triangleIndices, vertices);
 
@@ -71,7 +64,7 @@ class Program
 
         float angleX = (float)(0f * (Math.PI / 180));
         float angleY = (float)(0f * (Math.PI / 180));     //-90
-        float angleZ = (float)(0f * (Math.PI/180));         // 90
+        float angleZ = (float)(0f * (Math.PI / 180));         // 90
         Matrix rotateMatrix = Matrix.RotationX(angleX) * Matrix.RotationY(angleY) * Matrix.RotationZ(angleZ);
 
 
@@ -107,123 +100,35 @@ class Program
         camera.position = Vector.Transform(camera.position, transformCam);
 
 
-       // Vector L = new Vector(0f, 0, 1);
         Vector L = new Vector(0.5f, 0, 1);
         L.Normalize();
- 
-
         int width = 320;
         int height = 240;
-        
-        //int width = 240;
-       // int height = 80;
-        Color[,] image = new Color[width, height*3];
-        for (int y = 0; y < height; y++)
+
+        Color[,] image = new Color[width, height * 3];
+
+
+
+        if (outputPath != null)
         {
-            for (int x = 0; x < width; x++)
-            {
-                Ray ray = camera.GetRayThroughPixel(x, y, width, height);
-                float result;
+            IRenderer render = new Render();
+            image = render.Render(camera, triangles, L, width, height);
 
-                
-                bool hit = false;
-                float minDistance = float.MaxValue;
-                Vector? intersectionPoint = null; // Точка перетину
-                Vector? normal = null; // Нормаль до перетину
-                foreach (Triangle triangle in triangles)
-                {
-                    var intersection = triangle.Intersects(ray);
+            IImageWriter writer = new PpmImageWriter();
+            writer.WriteImageToFile(image, width, height, outputPath);
+        }
+        else     //if outputPath was not mentioned == null == output into console
+        {
 
-                   
-                    if (intersection.intersection.HasValue)
-                    {
-                       
-                        Vector distance = (intersection.intersection.Value - ray.origin);
-                        float dist = distance.Magnitude();
+            Console.WriteLine("Render");
+            IRenderer render = new Render();
+            image = render.Render(camera, triangles, L, width, height);
 
-                        if (dist < minDistance)
-                        {
-                            minDistance = dist;
-                            intersectionPoint = intersection.intersection.Value;
-                            normal = intersection.normal;
-                            hit = true;
-                        }
-                    }
-                }
-
-                bool inShadow = false;
-
-                // Якщо було перетин з найближчим трикутником
-                if (hit)
-                {
-                   //новий промінь
-                    Vector lightDirection = (L - intersectionPoint.Value);
-                    lightDirection.Normalize();
-
-                    Ray shadowRay = new Ray(intersectionPoint.Value + 0.001f * lightDirection, lightDirection);
-
-                    // Перевіряємо перетин з іншими трикутниками на сцені
-                    foreach (Triangle triangle in triangles)
-                    {
-                        if (triangle.Intersects(shadowRay).intersection.HasValue)
-                        {
-                            inShadow = true;
-                            break;
-                        }
-                    }
-
-                    if (inShadow)
-                    {
-                        result = Vector.Dot(normal, lightDirection);
-
-                        if (result < 0)
-                        {
-                            Console.Write("=");
-                            image[x, y] = new Color(32, 32, 32);
-                        }
-                        else if (result < 0.2)
-                        {
-                            Console.Write("*");
-                            image[x, y] = new Color(64, 64, 64);
-                        }
-                        else if (result < 0.5)
-                        {
-                            Console.Write("#");
-                            image[x, y] = new Color(128, 128, 128);
-                        }
-                        else if (result < 0.8)
-                        {
-                            Console.Write("%");
-                            image[x, y] = new Color(192, 192, 192);
-                        }
-                        else
-                        {
-                            //█
-                            Console.Write("@");
-                            image[x, y] = new Color(255, 255, 255);
-                        }
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                        image[x, y] = new Color(0, 0, 0);
-
-                    }
-                }
-                else
-                {
-                    Console.Write(" ");
-                }
-
-            }
-            Console.WriteLine();
         }
 
 
-        IImageWriter writer = new PpmImageWriter();
-        writer.WriteImageToFile(image, width, height, outputPath);
-
-        while (true)
+        bool a = false;
+        while (a == true)
         {
             //Tests usage
 
