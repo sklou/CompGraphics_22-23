@@ -11,7 +11,7 @@ using NUnit.Framework;
 
 class Program
 {
-
+    //Obj_reader.exe --source=D:\GitLab\CompGraphics_22-23\Obj_reader\forRender\cow.obj --output=D:\GitLab\CompGraphics_22-23\Obj_reader\forRender\cow.ppm
 
     static void Main(string[] args)
     {
@@ -108,23 +108,18 @@ class Program
         Color[,] image = new Color[width, height * 3];
 
 
+        IRenderer render = new Render();
+        image = render.Render(camera, triangles, L, width, height);
 
         if (outputPath != null)
         {
-            IRenderer render = new Render();
-            image = render.Render(camera, triangles, L, width, height);
+            
+           
 
             IImageWriter writer = new PpmImageWriter();
             writer.WriteImageToFile(image, width, height, outputPath);
         }
-        else     //if outputPath was not mentioned == null == output into console
-        {
-
-            Console.WriteLine("Render");
-            IRenderer render = new Render();
-            image = render.Render(camera, triangles, L, width, height);
-
-        }
+        
 
 
         bool a = false;
