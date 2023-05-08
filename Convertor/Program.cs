@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 
 
-//Program.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
+//Program.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 class Program
 {
     static void Main(string[] args)
