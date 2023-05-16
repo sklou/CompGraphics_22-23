@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 
+namespace laba2;
 
 //Program.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 class Program
