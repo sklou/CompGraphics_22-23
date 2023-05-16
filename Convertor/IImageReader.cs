@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using PPM_into_BMP;
 
 namespace laba2;
 

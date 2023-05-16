@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="PPM_into_BMP">
+      <HintPath>..\PPM_into_BMP\bin\Debug\net6.0\PPM_into_BMP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
