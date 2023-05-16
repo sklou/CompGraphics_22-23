@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 
-namespace laba2;
 
 //Program.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 class Program
@@ -151,7 +150,7 @@ class Program
             return;
         }
 
-        
+        /*
         byte[] bmpData = new byte[ppmWidth * ppmHeight * 3];
         for (int y = 0; y < ppmHeight; y++)
         {
@@ -183,7 +182,7 @@ class Program
             0, 0, 0, 0, // Colors Used
             0, 0, 0, 0, // Colors Important
         };
-
+        */
 
 
         using (FileStream bmpStream = new FileStream(outputPath, FileMode.Create))
