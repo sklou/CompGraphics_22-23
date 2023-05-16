@@ -1,4 +1,5 @@
-﻿using System;
+﻿using laba2;
+using System;
 using System.IO;
 using System.Text;
 
