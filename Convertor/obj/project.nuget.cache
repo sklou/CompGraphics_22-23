@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "9S2O78byT0kmW0I8lPII43LpRMfDSWq6Oqe0zvKx85Kq7ve82awnmtM0j+zsQjiu/DEMFVy8u8lw9BDzcg7LeQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
-=======
   "dgSpecHash": "4Oq9dZXA+69CTyYNniBneZcDtAfBWOdm+MPyelzUxy4cWpeeUEYJq65lWcEZ+OzsjuB0Sc8Rc+EzxrMYyH0tcw==",
   "success": true,
   "projectFilePath": "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
->>>>>>> b2c1aa820f3aa255976ca2c386137307fe8d5ca5
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша D:\\GitLab\\CompGraphics_22-23\\Convertor\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

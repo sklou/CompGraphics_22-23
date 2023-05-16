@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
-        "projectName": "Convertor",
-        "projectPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
-        "packagesPath": "C:\\Users\\Danya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\obj\\",
-=======
     "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj": {}
   },
   "projects": {
@@ -25,18 +12,13 @@
         "projectPath": "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
         "packagesPath": "C:\\Users\\mcmcm\\.nuget\\packages\\",
         "outputPath": "D:\\GitLab\\CompGraphics_22-23\\Convertor\\obj\\",
->>>>>>> b2c1aa820f3aa255976ca2c386137307fe8d5ca5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Code\\Общие компоненты, инструменты и пакеты SDK\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\Danya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
           "C:\\Users\\mcmcm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> b2c1aa820f3aa255976ca2c386137307fe8d5ca5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,11 +59,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> b2c1aa820f3aa255976ca2c386137307fe8d5ca5
         }
       }
     }

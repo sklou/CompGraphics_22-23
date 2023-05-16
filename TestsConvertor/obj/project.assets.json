@@ -4087,19 +4087,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Danya\\.nuget\\packages\\": {}
+    "C:\\Users\\mcmcm\\.nuget\\packages\\": {},
+    "C:\\Code\\Общие компоненты, инструменты и пакеты SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\TestsConvertor\\TestsConvertor.csproj",
+      "projectUniqueName": "D:\\GitLab\\CompGraphics_22-23\\TestsConvertor\\TestsConvertor.csproj",
       "projectName": "TestsConvertor",
-      "projectPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\TestsConvertor\\TestsConvertor.csproj",
-      "packagesPath": "C:\\Users\\Danya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\TestsConvertor\\obj\\",
+      "projectPath": "D:\\GitLab\\CompGraphics_22-23\\TestsConvertor\\TestsConvertor.csproj",
+      "packagesPath": "C:\\Users\\mcmcm\\.nuget\\packages\\",
+      "outputPath": "D:\\GitLab\\CompGraphics_22-23\\TestsConvertor\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Code\\Общие компоненты, инструменты и пакеты SDK\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Danya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mcmcm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4113,8 +4118,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj": {
-              "projectPath": "C:\\Users\\Danya\\OneDrive\\Desktop\\GitWeb\\CompGraphics_22-23\\Convertor\\Convertor.csproj"
+            "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj": {
+              "projectPath": "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj"
             }
           }
         }
@@ -4170,7 +4175,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
