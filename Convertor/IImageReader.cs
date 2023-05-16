@@ -12,7 +12,7 @@ public interface IImageReader
 
 class Reader
 {
-    static void Main(string[] args)
+    static void CheckImageReader(string[] args)
     {
         string pluginPath = "plugins/Reader.PPM.dll"; // Путь к .dll файлу
 
