@@ -3,8 +3,10 @@
     "",
     "\\Convertor",
     "\\Convertor\\Plugins",
-    "\\Obj_reader"
+    "\\Obj_reader",
+    "\\Obj_reader\\Structures",
+    "\\PPM_into_BMP"
   ],
-  "SelectedNode": "\\Obj_reader\\Program.cs",
+  "SelectedNode": "\\Convertor\\Convertor_.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,14 +1,22 @@
-﻿using laba2;
-using System;
+﻿using System;
 using System.IO;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
+using PPM_into_BMP;
+using static System.Net.Mime.MediaTypeNames;
 
 
-//Program.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
+//Convertor.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
+
+////Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 class Program
 {
     static void Main(string[] args)
     {
+        //string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test.ppm";
+       // string goalFormat = "bmp";
+       // string outputPath = null;
+
         string sourcePath = null;
         string goalFormat = null;
         string outputPath = null;
@@ -149,41 +157,11 @@ class Program
         {
             Console.Error.WriteLine($"Error reading PPM file: {e.Message}");
             return;
-        }
+        }  
 
-        /*
-        byte[] bmpData = new byte[ppmWidth * ppmHeight * 3];
-        for (int y = 0; y < ppmHeight; y++)
-        {
-            for (int x = 0; x < ppmWidth; x++)
-            {
-                int ppmOffset = (y * ppmWidth + x) * 3;
-                int bmpOffset1 = ((ppmHeight - y - 1) * ppmWidth + x) * 3;
-                bmpData[bmpOffset1 + 2] = ppmData[ppmOffset+1];     // Blue
-                bmpData[bmpOffset1] = ppmData[ppmOffset]; // Green
-                bmpData[bmpOffset1+1] = ppmData[ppmOffset + 2];     // Red
-            }
-        }
-        int bmpSize = 14 + 40 + bmpData.Length;
-        int bmpOffset = 14 + 40;
-        byte[] bmpHeader = new byte[] {
-            0x42, 0x4D,                       
-        (byte)(bmpSize), (byte)(bmpSize >> 8), (byte)(bmpSize >> 16), (byte)(bmpSize >> 24), 
-            0, 0, 0, 0,                       
-        (byte)(bmpOffset), (byte)(bmpOffset >> 8), (byte)(bmpOffset >> 16), (byte)(bmpOffset >> 24), 
-            40, 0, 0, 0,                     
-        (byte)(ppmWidth), (byte)(ppmWidth >> 8), (byte)(ppmWidth >> 16), (byte)(ppmWidth >> 24), // Width
-        (byte)(ppmHeight), (byte)(ppmHeight >> 8), (byte)(ppmHeight >> 16), (byte)(ppmHeight >> 24), // Height
-            1, 0, // Color Planes
-            24, 0, // Bits per Pixel
-            0, 0, 0, 0, // Compression
-        (byte)(bmpData.Length), (byte)(bmpData.Length >> 8), (byte)(bmpData.Length >> 16), (byte)(bmpData.Length >> 24), // Image Size
-            0, 0, 0, 0, // X Pixels per Meter
-            0, 0, 0, 0, // Y Pixels per Meter
-            0, 0, 0, 0, // Colors Used
-            0, 0, 0, 0, // Colors Important
-        };
-        */
+        byte[] data = new byte[ppmWidth * ppmHeight * 3];
+        IImageReader reader = new PPMintoBMP();
+        reader.ReadImage(sourcePath, ppmHeight, ppmWidth, ppmData, out byte[] bmpData, out byte[] bmpHeader);
 
 
         using (FileStream bmpStream = new FileStream(outputPath, FileMode.Create))
@@ -192,6 +170,8 @@ class Program
             bmpStream.Write(bmpData, 0, bmpData.Length);
         }
         Console.WriteLine($"Conversion complete: {outputPath}");
+
+        
     }
 }
 
