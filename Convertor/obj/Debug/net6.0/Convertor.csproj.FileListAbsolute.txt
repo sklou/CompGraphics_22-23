@@ -28,3 +28,6 @@ C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.pdb
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.genruntimeconfig.cache
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\net6.0\ref\Convertor.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.pdb
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.csproj.CopyComplete

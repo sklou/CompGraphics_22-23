@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mcmcm\\.nuget\\packages\\": {},
-    "C:\\Code\\Общие компоненты, инструменты и пакеты SDK\\NuGetPackages": {}
+    "C:\\Users\\sssok\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitLab\\CompGraphics_22-23\\PPM_into_BMP\\PPM_into_BMP.csproj",
+      "projectUniqueName": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\PPM_into_BMP\\PPM_into_BMP.csproj",
       "projectName": "PPM_into_BMP",
-      "projectPath": "D:\\GitLab\\CompGraphics_22-23\\PPM_into_BMP\\PPM_into_BMP.csproj",
-      "packagesPath": "C:\\Users\\mcmcm\\.nuget\\packages\\",
-      "outputPath": "D:\\GitLab\\CompGraphics_22-23\\PPM_into_BMP\\obj\\",
+      "projectPath": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\PPM_into_BMP\\PPM_into_BMP.csproj",
+      "packagesPath": "C:\\Users\\sssok\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sssok\\OneDrive\\Documents\\GitHub\\CompGraphics_22-23\\PPM_into_BMP\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Code\\Общие компоненты, инструменты и пакеты SDK\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mcmcm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\sssok\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -66,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

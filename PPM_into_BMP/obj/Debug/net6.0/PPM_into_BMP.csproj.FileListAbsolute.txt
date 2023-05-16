@@ -10,3 +10,15 @@ D:\GitLab\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.dll
 D:\GitLab\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\refint\PPM_into_BMP.dll
 D:\GitLab\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.pdb
 D:\GitLab\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\ref\PPM_into_BMP.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\bin\Debug\net6.0\PPM_into_BMP.deps.json
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\bin\Debug\net6.0\PPM_into_BMP.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\bin\Debug\net6.0\PPM_into_BMP.pdb
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.csproj.AssemblyReference.cache
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.AssemblyInfoInputs.cache
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.AssemblyInfo.cs
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.csproj.CoreCompileInputs.cache
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\refint\PPM_into_BMP.dll
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\PPM_into_BMP.pdb
+C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\PPM_into_BMP\obj\Debug\net6.0\ref\PPM_into_BMP.dll

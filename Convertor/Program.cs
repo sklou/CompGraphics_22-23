@@ -1,7 +1,7 @@
-﻿using laba2;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
+using PPM_into_BMP;
 
 
 //Program.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
@@ -184,7 +184,8 @@ class Program
             0, 0, 0, 0, // Colors Important
         };
         */
-
+        IImageReader reader = new PPMintoBMP();
+        reader.ReadImage(sourcePath, out byte[] bmpData, out byte[] bmpHeader);
 
         using (FileStream bmpStream = new FileStream(outputPath, FileMode.Create))
         {
