@@ -31,3 +31,6 @@ C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.dll
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.pdb
 C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.csproj.CopyComplete
+D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.dll
+D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM_into_BMP.pdb
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.csproj.CopyComplete
