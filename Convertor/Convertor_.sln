@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Convertor", "Convertor.csproj", "{975D8CD2-987D-49A4-98AB-971D881FD29F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsConvertor", "..\TestsConvertor\TestsConvertor.csproj", "{04013134-AA34-43FF-998C-046A72F5FF6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsConvertor", "..\TestsConvertor\TestsConvertor.csproj", "{04013134-AA34-43FF-998C-046A72F5FF6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,12 +4,5 @@
   "success": true,
   "projectFilePath": "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Convertor.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\GitLab\\CompGraphics_22-23\\Convertor\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

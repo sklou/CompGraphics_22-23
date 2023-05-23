@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Convertor",
-    "\\Convertor\\Plugins",
-    "\\Obj_reader",
-    "\\Obj_reader\\Structures",
-    "\\PPM_into_BMP"
+    "\\Convertor\\Plugins"
   ],
-  "SelectedNode": "\\Convertor\\Program.cs",
+  "SelectedNode": "\\Convertor\\Convertor_.sln",
   "PreviewInSolutionExplorer": false
 }

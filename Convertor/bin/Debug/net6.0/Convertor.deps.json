@@ -8,15 +8,24 @@
     ".NETCoreApp,Version=v6.0": {
       "Convertor/1.0.0": {
         "dependencies": {
-          "PPM_into_BMP": "1.0.0.0"
+          "BMP": "1.0.0.0",
+          "PPM": "1.0.0.0"
         },
         "runtime": {
           "Convertor.dll": {}
         }
       },
-      "PPM_into_BMP/1.0.0.0": {
+      "BMP/1.0.0.0": {
         "runtime": {
-          "PPM_into_BMP.dll": {
+          "BMP.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PPM/1.0.0.0": {
+        "runtime": {
+          "PPM.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -30,7 +39,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "PPM_into_BMP/1.0.0.0": {
+    "BMP/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PPM/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

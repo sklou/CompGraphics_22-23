@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="PPM_into_BMP">
-      <HintPath>..\PPM_into_BMP\bin\Debug\net6.0\PPM_into_BMP.dll</HintPath>
+    <Reference Include="BMP">
+      <HintPath>..\Plugins\BMP\bin\Debug\net6.0\BMP.dll</HintPath>
+    </Reference>
+    <Reference Include="PPM">
+      <HintPath>..\Plugins\PPM\bin\Debug\net6.0\PPM.dll</HintPath>
     </Reference>
   </ItemGroup>
 

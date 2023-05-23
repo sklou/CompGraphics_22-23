@@ -1,0 +1,5 @@
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Release\net6.0\Convertor.csproj.AssemblyReference.cache
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Release\net6.0\Convertor.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Release\net6.0\Convertor.AssemblyInfoInputs.cache
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Release\net6.0\Convertor.AssemblyInfo.cs
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Release\net6.0\Convertor.csproj.CoreCompileInputs.cache
