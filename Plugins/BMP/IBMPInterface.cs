@@ -13,5 +13,7 @@ namespace BMP
         void Conver_INTO_bmp(string filePath, int ppmWidth, int ppmHeight, byte[] ppmData, out byte[] bmpData, out byte[] bmpHeader);
 
         void WriteBMPFile(string outputPath, byte[] bmpHeader, byte[] bmpData);
+
+        void ReadBMP(string sourcePath, out byte[] bmpData, out int bmpWidth, out int bmpHeight);
     }
 }

@@ -1,11 +1,66 @@
-﻿namespace BMP
+﻿using System.Text;
+
+namespace BMP
 {
     public class BMPfile : IBMPInterface
     {
         public bool CanRead(string filePath)
         {
-            return true;
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Open))
+                {
+                    byte[] header = new byte[2];
+                    fileStream.Read(header, 0, 2);
+                    if(header[0] == 0x42 && header[1] == 0x4D)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                       // Console.WriteLine("The file is not a BMP file.");
+                        return false;
+                    }
+                    
+                }
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("The file is not a BMP file.");
+                return false;
+            }
         }
+
+
+        public void ReadBMP(string sourcePath, out byte[] bmpData, out int bmpWidth, out int bmpHeight)
+        {
+            bmpData = null;
+            bmpWidth = 0;
+            bmpHeight = 0;
+
+            try
+            {
+                using (FileStream fs = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
+                {
+                    byte[] header = new byte[54];
+                    fs.Read(header, 0, 54);
+
+                    bmpWidth = BitConverter.ToInt32(header, 18);
+                    bmpHeight = BitConverter.ToInt32(header, 22);
+
+                    int dataSize = bmpWidth * bmpHeight * 3; 
+
+                    bmpData = new byte[dataSize];
+                    fs.Read(bmpData, 0, dataSize);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error reading BMP file: " + ex.Message);
+            }
+        }
+
+
         public void Conver_INTO_bmp(string filePath, int ppmWidth, int ppmHeight, byte[] ppmData, out byte[] bmpData, out byte[] bmpHeader)
         {
             int width = ppmWidth;
@@ -57,5 +112,8 @@
                 Console.Error.WriteLine($"Error writing BMP file: {e.Message}");
             }
         }
+
+
     }
 }
+

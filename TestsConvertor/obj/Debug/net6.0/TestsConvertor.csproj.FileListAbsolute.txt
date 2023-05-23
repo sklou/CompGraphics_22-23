@@ -108,3 +108,10 @@ C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\TestsConvertor\obj\Deb
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.pdb
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.genruntimeconfig.cache
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\ref\TestsConvertor.dll
+D:\GitLab\CompGraphics_22-23\TestsConvertor\bin\Debug\net6.0\CoverletSourceRootsMapping
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.csproj.AssemblyReference.cache
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.AssemblyInfoInputs.cache
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.AssemblyInfo.cs
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.csproj.CoreCompileInputs.cache
+D:\GitLab\CompGraphics_22-23\TestsConvertor\obj\Debug\net6.0\TestsConvertor.pdb
