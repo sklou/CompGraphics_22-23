@@ -8,6 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 using PPM;
 using BMP;
 using Convertor.Interface;
+using System.Reflection.PortableExecutable;
 
 
 //Convertor.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
@@ -19,17 +20,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        //string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test.ppm";
-        //string goalFormat = "bmp";
-        //string outputPath = null;
+       // string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test.ppm";
+       // string goalFormat = "bmp";
+       // string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\out\\test.bmp";
 
-        string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test.bmp";
-        string goalFormat = "ppm";
-        string outputPath = null;
+        // string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test4.bmp";
+        // string goalFormat = "ppm";
+        // string outputPath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\out\\test4.ppm";
 
-       // string sourcePath = null;
-       // string goalFormat = null;
-       // string outputPath = null;
+         string sourcePath = null;
+         string goalFormat = null;
+         string outputPath = null;
 
 
         for (int i = 0; i < args.Length; i++)
@@ -74,28 +75,47 @@ class Program
         BMPfile bmp = new BMPfile();
         IImageWriter writer = new Writer();
 
+        bool ppmRead = ppm.CanRead(sourcePath);
+        bool bmpRead = bmp.CanRead(sourcePath);
 
-        if (ppm.CanRead(sourcePath) == true)
+        if (ppmRead == true)
             {
             ppm.Read(sourcePath, out byte[] Data, out int Width, out int Height);
-            bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
-           // ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+            if(goalFormat == "bmp")
+            {
+                bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+                writer.WriteFile(outputPath, Header, outData);
 
-            writer.WriteFile(outputPath, Header, outData);
+            }
+            if (goalFormat == "ppm")
+            {
+                ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+                writer.WriteFile(outputPath, Header, outData);
 
-        }else if (bmp.CanRead(sourcePath) == true)
+            }  
+
+        }
+        else if (bmpRead == true)
         {
             bmp.Read(sourcePath, out byte[] Data, out int Width, out int Height);
-            ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
-            //bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
-            writer.WriteFile(outputPath, Header, outData);
+            if (goalFormat == "ppm")
+            {
+                ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+                writer.WriteFile(outputPath, Header, outData);
+
+            }
+            if (goalFormat == "bmp")
+            {
+                bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+                writer.WriteFile(outputPath, Header, outData);
+
+            }         
         }
         else
         {
             Console.WriteLine("Invalid format");
         }
-      
-
+        
 
     }
 }
