@@ -1,15 +1,3 @@
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\bin\Debug\net6.0\PPM.deps.json
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\bin\Debug\net6.0\PPM.dll
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\bin\Debug\net6.0\PPM.pdb
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.csproj.AssemblyReference.cache
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.GeneratedMSBuildEditorConfig.editorconfig
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.AssemblyInfoInputs.cache
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.AssemblyInfo.cs
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.csproj.CoreCompileInputs.cache
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.dll
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\refint\PPM.dll
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\PPM.pdb
-D:\GitLab\CompGraphics_22-23\Convertor\Plugins\PPM\obj\Debug\net6.0\ref\PPM.dll
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\bin\Debug\net6.0\PPM.deps.json
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\bin\Debug\net6.0\PPM.dll
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\bin\Debug\net6.0\PPM.pdb
@@ -18,7 +6,10 @@ D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.GeneratedMSBuildEd
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.AssemblyInfoInputs.cache
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.AssemblyInfo.cs
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.csproj.CoreCompileInputs.cache
+D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.csproj.CopyComplete
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.dll
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\refint\PPM.dll
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\PPM.pdb
 D:\GitLab\CompGraphics_22-23\Plugins\PPM\obj\Debug\net6.0\ref\PPM.dll
+D:\GitLab\CompGraphics_22-23\Plugins\PPM\bin\Debug\net6.0\Interfaces.dll
+D:\GitLab\CompGraphics_22-23\Plugins\PPM\bin\Debug\net6.0\Interfaces.pdb

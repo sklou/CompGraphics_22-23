@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Interfaces">
+      <HintPath>..\Interfaces\bin\Debug\net6.0\Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -30,6 +30,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Interfaces/1.0.0.0": {
+        "runtime": {
+          "Interfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -45,6 +53,11 @@
       "sha512": ""
     },
     "PPM/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Interfaces/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

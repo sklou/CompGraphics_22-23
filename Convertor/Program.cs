@@ -1,10 +1,13 @@
-﻿using BMP;
-using PPM;
+﻿using Convertor.Class;
 using System;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
+
+using PPM;
+using BMP;
+using Convertor.Interface;
 
 
 //Convertor.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
@@ -20,12 +23,13 @@ class Program
         //string goalFormat = "bmp";
         //string outputPath = null;
 
-       // string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test4.bmp";
-      //  string goalFormat = "ppm";
-       // string outputPath = null;
-        string sourcePath = null;
-        string goalFormat = null;
+        string sourcePath = "D:\\GitLab\\CompGraphics_22-23\\Convertor\\Test_pic\\test.bmp";
+        string goalFormat = "ppm";
         string outputPath = null;
+
+       // string sourcePath = null;
+       // string goalFormat = null;
+       // string outputPath = null;
 
 
         for (int i = 0; i < args.Length; i++)
@@ -65,32 +69,34 @@ class Program
         }
 
 
-    
-        IPPMInterface ppm = new PPMfile();
-        IBMPInterface bmp = new BMPfile();
+
+        PPMfile ppm = new PPMfile();
+        BMPfile bmp = new BMPfile();
+        IImageWriter writer = new Writer();
 
 
-        //bmp.CanRead(sourcePath);
+        if (ppm.CanRead(sourcePath) == true)
+            {
+            ppm.Read(sourcePath, out byte[] Data, out int Width, out int Height);
+            bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+           // ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
 
-        if(ppm.CanRead(sourcePath) == true)
+            writer.WriteFile(outputPath, Header, outData);
+
+        }else if (bmp.CanRead(sourcePath) == true)
         {
-            ppm.ReadPPM(sourcePath, out byte[] ppmData, out int ppmWidth, out int ppmHeight);
-            bmp.Conver_INTO_bmp(sourcePath, ppmHeight, ppmWidth, ppmData, out byte[] bmpData, out byte[] bmpHeader);
-            bmp.WriteBMPFile(outputPath, bmpHeader, bmpData);
-        }else if(bmp.CanRead(sourcePath) == true)
-        {
-            bmp.ReadBMP(sourcePath, out byte[] bmpData, out int bmpWidth, out int bmpHeight);
-            ppm.Convert_INTO_PPM(sourcePath, bmpHeight, bmpWidth, bmpData, out byte[] ppmData, out byte[] ppmHeader);
-            ppm.WritePPMFile(outputPath, ppmHeader, ppmData);
+            bmp.Read(sourcePath, out byte[] Data, out int Width, out int Height);
+            ppm.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+            //bmp.Convert(sourcePath, Height, Width, Data, out byte[] outData, out byte[] Header);
+            writer.WriteFile(outputPath, Header, outData);
         }
         else
         {
             Console.WriteLine("Invalid format");
         }
-        
+      
 
-       
-        
+
     }
 }
 

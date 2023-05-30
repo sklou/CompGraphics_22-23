@@ -43,8 +43,10 @@ C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Convertor\bin\Debug\ne
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Convertor\bin\Debug\net6.0\Convertor.pdb
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.genruntimeconfig.cache
 C:\Users\Danya\OneDrive\Desktop\GitWeb\CompGraphics_22-23\Convertor\obj\Debug\net6.0\ref\Convertor.dll
-D:\GitLab\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.csproj.CopyComplete
 D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\BMP.dll
 D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM.dll
 D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\BMP.pdb
 D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\PPM.pdb
+D:\GitLab\CompGraphics_22-23\Convertor\obj\Debug\net6.0\Convertor.csproj.CopyComplete
+D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\Interfaces.dll
+D:\GitLab\CompGraphics_22-23\Convertor\bin\Debug\net6.0\Interfaces.pdb

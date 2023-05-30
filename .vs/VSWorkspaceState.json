@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Convertor"
+    "\\Convertor",
+    "\\Plugins\\BMP"
   ],
-  "SelectedNode": "\\Convertor\\Convertor_.sln",
+  "SelectedNode": "\\Convertor\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
