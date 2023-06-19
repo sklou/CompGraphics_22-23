@@ -13,9 +13,15 @@ using System.Reflection.PortableExecutable;
 
 //Convertor.exe --source=C:\Users\sssok\OneDrive\Documents\GitHub\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 
-//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp
 
-//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test4.bmp --goal-format=ppm
+
+//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=bmp --output=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\out\test.bmp
+//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test.ppm --goal-format=ppm --output=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\out\test.ppm       //incorect
+
+
+//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test4.bmp --goal-format=ppm --output=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\out\test4.ppm
+//Convertor.exe --source=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\test4.bmp --goal-format=bmp --output=D:\GitLab\CompGraphics_22-23\Convertor\Test_pic\out\test4.bmp     //incorect
+
 class Program
 {
     static void Main(string[] args)

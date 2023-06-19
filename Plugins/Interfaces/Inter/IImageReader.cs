@@ -10,8 +10,17 @@ namespace Interfaces.Inter
     {
         bool CanRead(string filePath);
 
-        void Convert(string filePath, int Width, int Height, byte[] from_Data, out byte[] outData, out byte[] Header);
+       // void Convert(string filePath, int Width, int Height, byte[] from_Data, out byte[] outData, out byte[] Header);
 
-        void Read(string sourcePath, out byte[] Data, out int Width, out int Height);
+        ImagePixels Read(string sourcePath);
     }
+
+    public class ImagePixels
+    {
+        public int Width;   
+        public int Height;
+        public Pixel[] pixels;
+    }
+       
+        
 }
