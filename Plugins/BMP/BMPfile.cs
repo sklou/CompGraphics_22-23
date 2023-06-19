@@ -31,37 +31,50 @@ namespace BMP
                 return false;
             }
         }
-        public void Read(string sourcePath, out byte[] Data, out int Width, out int Height)
+        public ImagePixels Read(string sourcePath)
         {
-            Data = null;
-            Width = 0;
-            Height = 0;
+           ImagePixels img = new ImagePixels();
             try
             {
                 using (FileStream fs = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
                 {
                     byte[] header = new byte[54];
                     fs.Read(header, 0, 54);
-                    Width = BitConverter.ToInt32(header, 18);
-                    Height = BitConverter.ToInt32(header, 22);
-                    int dataSize = Width * Height * 3;
-                    Data = new byte[dataSize];
-                    fs.Read(Data, 0, dataSize);
+                    img.Width = BitConverter.ToInt32(header, 18);
+                    img.Height = BitConverter.ToInt32(header, 22);
+                    int dataSize = img.Width * img.Height*3;
+                    var data = new byte[dataSize];
+                    fs.Read(data, 0, dataSize);
+                    img.pixels = new Pixel[img.Width* img.Height];
+
+                    for (int y = 0; y < img.Height; y++)
+                    {
+                        for (int x = 0; x < img.Width; x++)
+                        {
+                            int imageOffset = (y * img.Width + x);
+                            int bmpOffset1 = ((img.Height - y - 1) * img.Width + x) * 3;
+                            //  int bmpOffset1 = (y * width + x) * 3;  
+                            img.pixels[imageOffset].R = data[bmpOffset1 +2];       
+                            img.pixels[imageOffset].G = data[bmpOffset1+1];
+                            img.pixels[imageOffset].B = data[bmpOffset1];                       
+                        }
+                    }
+
+                   
                 }
+               
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error reading BMP file: " + ex.Message);
 
             }
+            return img;
 
         }
 
 
-
-
-
-        public void Convert(string filePath, int Width, int Height, byte[] from_Data, out byte[] outData, out byte[] Header)
+      /*  public void Convert(string filePath, int Width, int Height, byte[] from_Data, out byte[] outData, out byte[] Header)
         {
             int width = Width;
             int height = Height;
@@ -95,6 +108,7 @@ namespace BMP
             0, 0, 0, 0,
             0, 0, 0, 0,
     };
-        }
+
+        }*/
     }
 }

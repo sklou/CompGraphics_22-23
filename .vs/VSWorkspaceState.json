@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Convertor"
+    "\\Convertor",
+    "\\Plugins",
+    "\\Plugins\\PPM"
   ],
   "SelectedNode": "\\Convertor\\Convertor_.sln",
   "PreviewInSolutionExplorer": false
